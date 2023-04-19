@@ -1,3 +1,7 @@
+Make a Dir
+mkdir k8-rbac-devloper
+cd k8-rbac-devloper
+
 1. Create a namespace called dev-namespace:
 
 # dev-namespace.yaml
@@ -32,10 +36,21 @@ First, get the ServiceAccount's token:
 
 SECRET_NAME=$(kubectl get serviceaccount dev-user -n dev-namespace -o jsonpath='{.secrets[0].name}')
 TOKEN=$(kubectl get secret $SECRET_NAME -n dev-namespace -o jsonpath='{.data.token}' | base64 --decode)
-
+or add these steps:
+kubectl get secret -n dev-namespace
+kubectl get secret dev-user-token-4vvkm -n dev-namespace
+kubectl get secret dev-user-token-4vvkm -n dev-namespace -o jsonpath='{.data.token}' | base64 --decode
 Next, get the cluster's Certificate Authority (CA) and server URL:
 
 CA_DATA=$(kubectl get configmap -n kube-system extension-apiserver-authentication -o jsonpath='{.data.client-ca-file}')
+
+or add these steps:
+kubectl get configmap -n kube-system
+kubectl get configmap extension-apiserver-authentication -n kube-system
+kubectl get configmap extension-apiserver-authentication -n kube-system -o yaml
+kubectl get configmap extension-apiserver-authentication -n kube-system -o jsonpath='{.data.client-ca-file}'
+---
+
 SERVER=$(kubectl config view -o jsonpath='{.clusters[0].cluster.server}')
 
 Finally, create the kubeconfig file:
