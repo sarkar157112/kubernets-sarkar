@@ -8,6 +8,10 @@ This will create a new user called dev-user and prompt you to set a password for
 2. Switch to the dev-user account:
 sudo su - dev-user
 
+and Add the new user to the sudo group to grant them administrative privileges:
+sudo usermod -aG sudo newuser
+
+
 3. Create a .kube directory in the dev-user home folder:
 mkdir ~/.kube
 
