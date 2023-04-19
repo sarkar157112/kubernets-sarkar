@@ -1,4 +1,4 @@
-Q. What is Kubernetes and why is it important with real use case.
+Q 1. What is Kubernetes and why is it important with real use case.
 Ans: Kubernetes, also known as K8s, is an open-source container orchestration platform developed by Google. It is designed to automate the deployment, scaling, and management of containerized applications, making it easier to build, deploy, and maintain large-scale applications.
 
 Kubernetes is important because it addresses several challenges that arise when managing large-scale, containerized applications in production. Some of its key benefits include:
@@ -23,4 +23,33 @@ Additionally, Kubernetes enables the company to deploy updates to their e-commer
 
 In summary, Kubernetes is an essential tool for managing containerized applications, providing scalability, high availability, seamless updates, self-healing, and load balancing. Its capabilities help organizations streamline their application management, reduce operational overhead, and improve overall system reliability.
 
-Q 
+Q 2. Kubernetes architecture and components.
+Ans: Kubernetes follows a distributed architecture, which consists of a control plane (also known as the master node) and multiple worker nodes. The control plane manages the overall state of the cluster, while the worker nodes run containerized applications. Here are the key components of Kubernetes architecture:
+
+Control Plane Components:
+
+API Server: The API server is the central management entity that exposes the Kubernetes API. It acts as a gateway for communication between various components and users. It processes RESTful requests and updates the desired state of the system.
+
+etcd: etcd is a distributed, consistent key-value store used to store the configuration data of the cluster. It is responsible for maintaining the actual and desired states of the system, as well as the metadata for all objects in the cluster.
+
+Controller Manager: The Controller Manager is a daemon that runs various control loops, continuously monitoring the state of the cluster and making changes to achieve the desired state. It includes controllers like the Node Controller, Replication Controller, and Deployment Controller.
+
+Scheduler: The Scheduler is responsible for assigning workloads (pods) to the appropriate worker nodes based on resource requirements, node affinity, and other constraints. It evaluates the feasibility and optimizes the placement of pods.
+
+Worker Node Components:
+
+Container Runtime: The Container Runtime is responsible for running containers on worker nodes. Kubernetes supports various runtimes, such as Docker, containerd, and CRI-O.
+
+Kubelet: Kubelet is an agent that runs on each worker node, ensuring that containers are running in their desired state, as specified in the pod specifications. It communicates with the API server to update the status of the node and pods.
+
+Kube-proxy: Kube-proxy is a network proxy that runs on each worker node, maintaining network rules and facilitating communication between pods, services, and external clients. It handles load balancing and service discovery.
+
+Real use case:
+
+Consider a media streaming company that uses Kubernetes to manage its microservices-based architecture. The company has several microservices, such as user authentication, media transcoding, content management, and recommendation engine.
+
+Each microservice is deployed in its pod and can be replicated to ensure high availability and load balancing. The API server acts as a gateway for all incoming requests, while the etcd stores the configuration data of the cluster.
+
+As the number of users increases or media processing demand grows, the Kubernetes scheduler dynamically assigns new pods to worker nodes, ensuring optimal resource allocation. The controller manager monitors the state of the cluster and makes changes to maintain the desired state, such as scaling up or down based on traffic.
+
+In this scenario, Kubernetes components work together to efficiently manage the media streaming platform, ensuring high availability, load balancing, and automatic scaling to accommodate varying user demands.
