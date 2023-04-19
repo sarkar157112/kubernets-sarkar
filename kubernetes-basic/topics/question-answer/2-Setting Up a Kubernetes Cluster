@@ -1,0 +1,29 @@
+Q 3. Cluster networking and ingress 
+Ans: Cluster networking and ingress are essential aspects of Kubernetes, as they facilitate communication between components within the cluster and enable external access to services.
+
+Cluster Networking:
+
+Kubernetes cluster networking is responsible for the internal communication between pods, services, and nodes. The main components involved are:
+
+Container Network Interface (CNI): CNI is a plugin-based networking solution that allows the integration of various network providers, such as Calico, Flannel, and Weave. It creates a flat, routable network where each pod has its IP address, enabling direct communication between them.
+
+Services: Services are Kubernetes objects that provide a stable IP address and DNS name, enabling communication between pods and load balancing across multiple instances of a pod. They can be of different types, such as ClusterIP, NodePort, or LoadBalancer.
+
+Network Policies: Network Policies are Kubernetes objects that define rules for controlling ingress and egress traffic between pods. They provide security and isolation between different components of an application.
+
+Ingress:
+
+Ingress is a Kubernetes object that manages external access to services running in a cluster. It provides HTTP and HTTPS routing, load balancing, SSL/TLS termination, and name-based virtual hosting. Ingress Controllers, such as NGINX, HAProxy, or Traefik, implement the ingress rules and manage the traffic.
+
+Real use case:
+
+Imagine a company running a multi-tier web application on Kubernetes. The application consists of a frontend, backend, and database tier. The frontend communicates with the backend, which in turn interacts with the database. Additionally, the frontend needs to be accessible from the internet.
+
+For internal communication, the company uses CNI to create a flat network and assigns a ClusterIP service to the backend tier. This allows the frontend to communicate with the backend using a stable IP address and DNS name. The company also implements network policies to restrict traffic between the frontend, backend, and database tiers, ensuring that only the required communication paths are allowed.
+
+To expose the frontend to the internet, the company creates an ingress resource, which defines the routing rules and maps the external domain name to the frontend service. They use an ingress controller, such as NGINX, to implement these rules and manage the traffic. The ingress controller also handles SSL/TLS termination for secure communication.
+
+In this scenario, cluster networking ensures seamless internal communication between different application components, while ingress enables secure external access to the frontend service. This setup provides a scalable, secure, and efficient way to manage the web application.
+
+
+
