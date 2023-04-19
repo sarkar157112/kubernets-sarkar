@@ -58,41 +58,42 @@ By completing this comprehensive course on Kubernetes, you will be well-prepared
 # Kubernetes security best practices, enabling you to deploy and manage applications in a secure manner and protect your cluster from potential threats.
 
 ## Introduction to Kubernetes Security
-a. Importance of security in containerized environments
-b. Attack surfaces and potential threats
-c. Principles of container and Kubernetes security
+
+1. Importance of security in containerized environments
+2. Attack surfaces and potential threats
+3. Principles of container and Kubernetes security
 
 ## Secure Cluster Setup and Configuration
-a. Securing the Kubernetes control plane
-b. Protecting etcd, the Kubernetes datastore
-c. Configuring network security, policies, and ingress controllers
-d. Securing Kubernetes nodes and the container runtime
+1. Securing the Kubernetes control plane
+2. Protecting etcd, the Kubernetes datastore
+3. Configuring network security, policies, and ingress controllers
+4. Securing Kubernetes nodes and the container runtime
 
 ## Authentication and Authorization
-a. Managing user and service accounts
-b. Role-Based Access Control (RBAC) and attribute-based access control (ABAC)
-c. Implementing least-privilege access
-d. Kubernetes admission controllers and webhooks
+1. Managing user and service accounts
+2. Role-Based Access Control (RBAC) and attribute-based access control (ABAC)
+3. Implementing least-privilege access
+4. Kubernetes admission controllers and webhooks
 
 ## Secrets Management
-a. Kubernetes Secrets and their limitations
-b. Encrypting Secrets at rest and in transit
-c. Integrating with external secrets management solutions (e.g., HashiCorp Vault, AWS Secrets Manager, or Azure Key Vault)
+1. Kubernetes Secrets and their limitations
+2. Encrypting Secrets at rest and in transit
+3. Integrating with external secrets management solutions (e.g., HashiCorp Vault, AWS Secrets Manager, or Azure Key Vault)
 
 ## Network Security and Policies
-a. Understanding Kubernetes networking concepts and security implications
-b. Implementing network segmentation and isolation using NetworkPolicies
-c. Securing ingress and egress traffic with network security groups and firewalls
+1. Understanding Kubernetes networking concepts and security implications
+2. Implementing network segmentation and isolation using NetworkPolicies
+3. Securing ingress and egress traffic with network security groups and firewalls
 
 ## Pod Security
-a. Implementing Pod Security Policies (PSPs) and PodSecurityContext
-b. Using security-enhanced Linux (SELinux) and AppArmor for pod isolation
-c. Securing containers with seccomp, gVisor, or Kata Containers
+1. Implementing Pod Security Policies (PSPs) and PodSecurityContext
+2. Using security-enhanced Linux (SELinux) and AppArmor for pod isolation
+3. Securing containers with seccomp, gVisor, or Kata Containers
 
 ## Container Image Security
-a. Securely building and storing container images
-b. Scanning container images for vulnerabilities with tools like Clair, Trivy, or Anchore
-c. Implementing image signing and verification with tools like Docker Content Trust or Notary
+1. Securely building and storing container images
+2. Scanning container images for vulnerabilities with tools like Clair, Trivy, or Anchore
+3. Implementing image signing and verification with tools like Docker Content Trust or Notary
 
 ## Runtime Security and Compliance
 a. Monitoring and auditing Kubernetes events with tools like Falco or Sysdig
@@ -100,7 +101,8 @@ b. Ensuring runtime compliance with tools like Open Policy Agent (OPA) or kube-b
 c. Detecting and mitigating threats in real-time
 
 ## Disaster Recovery and Incident Response
-a. Implementing backup and recovery strategies for Kubernetes clusters and applications
+a. Implementing backup and recovery strategies for Kubernetes clusters and applications.
+
 b. Developing an incident response plan for security events
 c. Forensics and post-incident analysis
 
