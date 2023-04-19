@@ -39,6 +39,14 @@ CA_DATA=$(kubectl get configmap -n kube-system extension-apiserver-authenticatio
 SERVER=$(kubectl config view -o jsonpath='{.clusters[0].cluster.server}')
 
 Finally, create the kubeconfig file:
+THEN Replace $CA_DATA, $SERVER, and $TOKEN with their respective values obtained in the previous steps.
+
+Save this YAML content as dev-user-kubeconfig.yaml and provide it to the dev-user. They can now use this kubeconfig file to interact with the Kubernetes cluster, restricted to the dev-namespace namespace and the permissions defined in the dev-user-role Role.
+
+To use the kubeconfig file, the user can set the KUBECONFIG environment variable or use the --kubeconfig flag with the kubectl command:
+export KUBECONFIG=dev-user-kubeconfig.yaml
+OR
+kubectl --kubeconfig=dev-user-kubeconfig.yaml get pods
 
 
 
